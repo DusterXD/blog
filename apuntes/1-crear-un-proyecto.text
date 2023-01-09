@@ -1,0 +1,40 @@
+1- para crear un nuevo protecto en laravel se coloca el comando.
+
+# jet es para indicar que se quiere trabajar con jestream
+
+* laravel new NOMBRE-PREYECTO --jet
+
+2- se intala
+
+* npm install
+* composer install
+
+# se ejecuta el ser run dev
+
+* npm run dev
+
+3- se crea una base de datos y se configura el achivo .env
+
+4- se migra la base de datos
+
+# para migrarlo se coloca
+
+* php artisan migrate
+
+---------------------------------------------------------------------------------------------------
+
+1- para crear un modelo se coloca
+
+# al indicar model se indica que cree un modelo
+
+* php artisan make:model NAME
+
+# si quero crear una migracion junto al modelo se coloca "-m"
+
+* php artisan make:model NAME -m
+
+2- para crear un factory (es para llenar con datos de prueba la BD)
+
+# ejemplo: NameFactory
+
+* php artisan make:factory Name + Factory 

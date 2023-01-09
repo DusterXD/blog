@@ -1,0 +1,22 @@
+# para comfigura la ruta de la imagenes se  dirige a
+
+1- la carpete "config/filesystems-php"
+
+2- se cambia a public
+
+* FILESYSTEM_DISK = "public"
+
+3- en el tal caso que sigan si funcionar se cambia en .env
+
+* FILESYSTEM_DISK=public
+
+4- Si faker les está dando problemas a la hora de descargar las imagenes, prueba la siguientes solucion:
+
+Abre el siguiente archivo: 'vendor\fakerphp\faker\src\Faker\Provider\Image.php' y reemplaza las siguientes líneas de código:  
+
+public const BASE_URL = 'https://placehold.jp';  // cambie la URL
+
+curl_setopt($ch, CURLOPT_FILE, $fp); //línea existente 
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);//nueva línea 
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);//nueva línea 
+$success = curl_exec($ch) && curl_getinfo($ch, CURLINFO_HTTP_CODE) === 200;//línea existente
